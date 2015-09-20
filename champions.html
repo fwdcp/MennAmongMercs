@@ -10,8 +10,17 @@ permalink: /champions/
 
     {% for champion in site.champions reversed %}
         <div class="m-b">
-            <h2>{{champion.name}}</h2>
-            <p class="lead">{{champion.event}} &ndash; {{champion.date}}</p>
+            <div class="media">
+                <div class="media-left">
+                    <img class="media-object" src="/img/teams/{{champion.logo}}" style="max-height: 75px"/>
+                </div>
+                <div class="media-body">
+                    <h4 class="media-heading">{{champion.name}}</h4>
+                    {{champion.event}}
+                    <br />
+                    {{champion.date}}
+                </div>
+            </div>
 
             <div class="card-group">
                 {% for player in champion.team %}
