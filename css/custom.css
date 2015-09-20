@@ -11,3 +11,7 @@
         float: none !important;
     }
 }
+
+body {
+    padding-top: 40px;
+}
