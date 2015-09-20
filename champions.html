@@ -1,58 +1,54 @@
 ---
 title: Champions
-layout: default
+layout: content
 permalink: /champions/
+description: teams that have proven themselves the best of the world by winning major international tournaments
 ---
 
-<div class="container">
-    <h1 class="display-4">Champions</h1>
-    <p class="text-muted lead">teams that have proven themselves the best of the world by winning major international tournaments</p>
-
-    {% for champion in site.champions reversed %}
-        <div class="m-b">
-            <div class="media">
-                {% if champion.logo %}
-                    <div class="media-left">
-                        <img class="media-object" src="/img/teams/{{champion.logo}}" style="max-height: 75px" />
-                    </div>
-                {% endif %}
-
-                <div class="media-body">
-                    <h4 class="media-heading">{{champion.name}}</h4>
-
-                    {{champion.event}}<br />
-                    {{champion.date}}
+{% for champion in site.champions reversed %}
+    <div class="m-b">
+        <div class="media">
+            {% if champion.logo %}
+                <div class="media-left">
+                    <img class="media-object" src="/img/teams/{{champion.logo}}" style="max-height: 75px" />
                 </div>
-            </div>
+            {% endif %}
 
-            <div class="card-group">
-                {% for player in champion.team %}
-                    <div class="card">
-                        {% if player.image %}
-                            <img class="card-img-top" src="/img/players/{{player.image}}" style="width: 100%" />
-                        {% elsif champion.logo %}
-                            <img class="card-img-top" src="/img/teams/{{champion.logo}}" style="width: 100%" />
-                        {% endif %}
+            <div class="media-body">
+                <h4 class="media-heading">{{champion.name}}</h4>
 
-                        <div class="card-block">
-                            <h4 class="card-title">{{player.alias}}</h4>
-
-                            {% if player.name %}
-                                <h6 class="card-subtitle text-muted">{{player.name}}</h6>
-                            {% endif %}
-
-                            <p class="card-text">
-                                {% if player.name %}
-                                    <img src="/img/classes/{{player.class}}.png" style="max-height: 1rem; vertical-align: text-top" /> {{player.class | capitalize}}<br />
-                                {% endif %}
-                                {% if player.country %}
-                                    <span class="flag-icon flag-icon-{{player.flag}}" style="vertical-align: text-top"></span> {{player.country}}<br />
-                                {% endif %}
-                            </p>
-                        </div>
-                    </div>
-                {% endfor %}
+                {{champion.event}}<br />
+                {{champion.date}}
             </div>
         </div>
-    {% endfor %}
-</div>
+
+        <div class="card-group">
+            {% for player in champion.team %}
+                <div class="card">
+                    {% if player.image %}
+                        <img class="card-img-top" src="/img/players/{{player.image}}" style="width: 100%" />
+                    {% elsif champion.logo %}
+                        <img class="card-img-top" src="/img/teams/{{champion.logo}}" style="width: 100%" />
+                    {% endif %}
+
+                    <div class="card-block">
+                        <h4 class="card-title">{{player.alias}}</h4>
+
+                        {% if player.name %}
+                            <h6 class="card-subtitle text-muted">{{player.name}}</h6>
+                        {% endif %}
+
+                        <p class="card-text">
+                            {% if player.name %}
+                                <img src="/img/classes/{{player.class}}.png" style="max-height: 1rem; vertical-align: text-top" /> {{player.class | capitalize}}<br />
+                            {% endif %}
+                            {% if player.country %}
+                                <span class="flag-icon flag-icon-{{player.flag}}" style="vertical-align: text-top"></span> {{player.country}}<br />
+                            {% endif %}
+                        </p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endfor %}

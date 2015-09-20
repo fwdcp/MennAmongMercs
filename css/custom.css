@@ -1,0 +1,13 @@
+@media (max-width: 47.9em) {
+    #navbar-links .nav-item {
+        float: none;
+    }
+
+    #navbar-links .nav-item+.nav-item {
+        margin-left: 0;
+    }
+
+    #navbar-links .pull-right {
+        float: none !important;
+    }
+}

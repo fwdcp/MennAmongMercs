@@ -1,13 +1,27 @@
 <header>
     <nav class="navbar navbar-light bg-primary">
-        <a class="navbar-brand" href="/">Menn Among Mercs</a>
-        <ul class="nav navbar-nav">
-            <li class="nav-item {% if page.path == 'champions.html' %} active {% endif %}">
-                <a class="nav-link" href="/champions">Champions</a>
-            </li>
-            <li class="nav-item {% if page.path == 'organizations.html' %} active {% endif %}">
-                <a class="nav-link" href="/organizations">Organizations</a>
-            </li>
-        </ul>
+        <a class="navbar-brand hidden-sm-up" href="/">Menn Among Mercs</a>
+        <div class="pull-right">
+            <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#navbar-links">
+                &#9776;
+            </button>
+        </div>
+        <div class="clearfix"></div>
+        <div class="collapse navbar-toggleable-xs" id="navbar-links">
+            <a class="navbar-brand hidden-sm-down" href="/">Menn Among Mercs</a>
+            <ul class="nav navbar-nav">
+                <li class="nav-item {% if page.path == 'champions.html' %} active {% endif %}">
+                    <a class="nav-link" href="/champions">Champions</a>
+                </li>
+                <li class="nav-item {% if page.path == 'organizations.html' %} active {% endif %}">
+                    <a class="nav-link" href="/organizations">Organizations</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav pull-right">
+                <li class="nav-item {% if page.path == 'about.md' %} active {% endif %}">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+            </ul>
+        </div>
     </nav>
 </header>
