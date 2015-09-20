@@ -37,16 +37,21 @@ description: teams that have proven themselves the best of the world by winning 
                         {% if player.name %}
                             <h6 class="card-subtitle text-muted">{{player.name}}</h6>
                         {% endif %}
-
-                        <p class="card-text">
-                            {% if player.name %}
-                                <img src="/img/classes/{{player.class}}.png" style="max-height: 1rem; vertical-align: text-top" /> {{player.class | capitalize}}<br />
-                            {% endif %}
-                            {% if player.country %}
-                                <span class="flag-icon flag-icon-{{player.flag}}" style="vertical-align: text-top"></span> {{player.country}}<br />
-                            {% endif %}
-                        </p>
                     </div>
+
+                    <ul class="list-group list-group-flush">
+                        {% if player.name %}
+                            <li class="list-group-item">
+                                <img src="/img/classes/{{player.class}}.png" style="max-height: 1rem; vertical-align: text-top" /> {{player.class | capitalize}}
+                            </li>
+                        {% endif %}
+
+                        {% if player.country %}
+                            <li class="list-group-item">
+                                <span class="flag-icon flag-icon-{{player.flag}}" style="vertical-align: text-top"></span> {{player.country}}
+                            </li>
+                        {% endif %}
+                    </ul>
                 </div>
             {% endfor %}
         </div>
