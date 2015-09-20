@@ -3,4 +3,5 @@ baseurl: ""
 url: "http://mennamongmercs.fwdcp.net"
 
 collections:
+  - champions
   - contributors
