@@ -1,0 +1,28 @@
+---
+title: Contributors
+layout: content
+permalink: /contributors/
+description: people that have distinguished themselves in their support for Team Fortress 2
+---
+
+<div class="card-columns">
+    {% for contributor in site.contributors %}
+        <div class="card">
+            {% if contributor.image %}
+                <img class="card-img-top" src="/img/contributors/{{contributor.image}}" style="width: 100%" />
+            {% endif %}
+
+            <div class="card-block">
+                <h4 class="card-title">{{contributor.name}}</h4>
+
+                <p class="card-text">{{contributor.content}}</p>
+
+                {% if contributor.links %}
+                    {% for link in contributor.links %}
+                        <a href="{{ link.url }}" class="card-link">{{ link.title }}</a>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    {% endfor %}
+</div>
