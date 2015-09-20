@@ -12,7 +12,7 @@ permalink: /champions/
         <div class="m-b">
             <div class="media">
                 <div class="media-left">
-                    <img class="media-object" src="/img/teams/{{champion.logo}}" style="max-height: 75px"/>
+                    <img class="media-object" src="/img/teams/{{champion.logo}}" style="max-height: 75px" />
                 </div>
                 <div class="media-body">
                     <h4 class="media-heading">{{champion.name}}</h4>
@@ -25,6 +25,7 @@ permalink: /champions/
             <div class="card-group">
                 {% for player in champion.team %}
                     <div class="card">
+                        <img class="card-img-top" src="{% if player.image %}/img/players/{{player.image}}{% else %}/img/teams/{{champion.logo}}{% endif %}" style="width: 100%" />
                         <div class="card-block">
                             <h4 class="card-title">{{player.alias}}</h4>
                             <h6 class="card-subtitle text-muted">{{player.name}}</h6>
