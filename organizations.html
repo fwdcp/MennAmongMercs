@@ -1,0 +1,32 @@
+---
+title: Organizations
+layout: default
+permalink: /organizations/
+---
+
+<div class="container">
+    <h1 class="display-4">Organizations</h1>
+    <p class="text-muted lead">groups that are unparalleled in their support for Team Fortress 2</p>
+
+    <div class="card-columns">
+        {% for organization in site.organizations %}
+            <div class="card">
+                {% if organization.image %}
+                    <img class="card-img-top" src="/img/organizations/{{organization.image}}" style="width: 100%" />
+                {% endif %}
+
+                <div class="card-block">
+                    <h4 class="card-title">{{organization.name}}</h4>
+
+                    <p class="card-text">{{organization.content}}</p>
+
+                    {% if organization.links %}
+                        {% for link in organization.links %}
+                            <a href="{{ link.url }}" class="card-link">{{ link.title }}</a>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
